@@ -25,7 +25,7 @@ for char in str:
     else:
         strWithDouble +=char
 
-fileOutput = open("fileOutput5.2.txt","w")
+fileOutput = open("fileOutput5.2.txt","w", encoding='utf-8')
 fileOutput.write(strWithDouble)
 fileOutput.close()
 

@@ -16,7 +16,7 @@ str = str.replace('A','o')
 str = str.capitalize()
 
 
-fileOutput = open("fileOutput5.1.txt","w")
+fileOutput = open("fileOutput5.1.txt","w", encoding='utf-8')
 fileOutput.write(str.ljust(45))
 fileOutput.close()
 
