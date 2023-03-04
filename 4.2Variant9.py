@@ -9,6 +9,6 @@ for n in range(0,m):
     print((cos(2)*n*x ) / pow((2*n+1),2))
     c += (cos(2)*n*x ) / pow((2*n+1),2)
 
-fileOutput = open("fileOutput4.2.txt","w")
+fileOutput = open("filesOutput/fileOutput4.2.txt","w")
 fileOutput.write(str(c))
 fileOutput.close()

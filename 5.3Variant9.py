@@ -33,6 +33,6 @@ for i in range(len(string)):
             
 
 
-fileOutput = open("fileOutput5.3.txt","w", encoding='utf-8')
+fileOutput = open("filesOutput/fileOutput5.3.txt","w", encoding='utf-8')
 fileOutput.write("Количество согласных строчных латинских букв " +  str(countLetters))
 fileOutput.close()
