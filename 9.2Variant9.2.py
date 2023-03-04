@@ -1,4 +1,5 @@
 import os
+import shutil
 
 def checkfile(str = "", FileName = ""):
     if(str == ""):
@@ -28,7 +29,22 @@ def renameFile():
 def createDir():
     dirName = input("Введите название каталога \n")
     os.mkdir(dirName)
-    #os.os
+    oldfile =  checkfile()
+    fileInNewDir = dirName + "\\" + oldfile
+    shutil.copyfile(oldfile,fileInNewDir)
+    
+
+def createTwoFile():
+    oldFile = checkfile()
+    shutil.copyfile(oldFile,oldFile+ "1")
+    shutil.copyfile(oldFile,oldFile+ "2")
+    os.remove(oldFile)
+
+def createFileWithData():
+    import datetime
+    fileOutput = open("timeTxt.txt","w")
+    fileOutput.write(str(datetime.datetime.today()) + "\n" )
+    fileOutput.close()
     
 
 while 1:
@@ -53,9 +69,7 @@ while 1:
     if(choice == 4):
         createDir()
     if(choice == 5):
-        pass
+        createTwoFile()
     if(choice == 6):
-        pass
+        createFileWithData()
 
-
-fileName = input("Ввдете название файла")
