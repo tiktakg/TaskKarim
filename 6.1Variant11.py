@@ -22,6 +22,7 @@ fileOutput = open("filesOutput/fileOutput6.1.txt", "w", encoding='utf-8')
 
 fileOutput.write("Полученный массив" + str(B) + "\n")
 fileOutput.write("Cумма элементов с четным индексом " + str(sum) + "\n")
-fileOutput.write("Количество положительных элементов " + str(positiveElement) + "\n")
+fileOutput.write("Количество положительных элементов " +
+                 str(positiveElement) + "\n")
 
 fileOutput.close()
