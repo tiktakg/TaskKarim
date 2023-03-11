@@ -3,23 +3,46 @@
 import os
 
 dictCountCars = {}
-fileSave = open("filesOutput/fileOutput10.1.txt", "w", encoding='utf-8')
+
 
 
 def firstWrite():
     c_Count = int(input("Вветие количество автомобилей \n"))
     c_Name = input("Введите название автомобиля \n")
-    dictCountCars.update({c_Name: c_Count})
+    dictCountCars.update({c_Name:c_Count})
 
-def checkfile(str = "", FileName = ""):
-    if(str == ""):
+
+def checkfile(str="", FileName=""):
+    if (str == ""):
         FileName = input("Введите путь к файлу и  название файла \n")
-    if(os.path.exists(FileName) or os.path.exists(str)):
+    if (os.path.exists(FileName) or os.path.exists(str)):
         print("Файл существует")
         return FileName
     else:
         print("Файл не существует ")
         return False
+
+def writeDataInFile():
+    with open("filesOutput/fileOutput10.1.txt", "w") as f:
+        for key, value in dictCountCars.items():
+            f.write(f"{key}: {value}\n")
+
+def readByFile():
+    with open("filesOutput/fileOutput10.1.txt", "r") as file:
+         for line in file:
+            key, value = line.strip().split(":")
+            dictCountCars[key] = value
+
+def updateAndDelteData():
+    dictCountCars[input("Введите название марки, чье кол-во автомобилей хотите изменить \n")] = int(input("Введите количество автомобилей на  которые хотите изменить \n"))
+    del dictCountCars[input("Введите название марки, которую хотите удалить \n")]
+
+def serchDataByKey():
+   print(dictCountCars[input("Введите название марки, чье кол-во автомобилей хотите посмотреть \n")])
+
+def sortDataByKey():
+   sorted_dict = dict(sorted(dictCountCars.items(), key=lambda x: x[0]))
+   
 
 while 1:
     print("Выбирете действие :")
@@ -37,20 +60,17 @@ while 1:
     if (choice == 1):
         firstWrite()
     if (choice == 2):
-        fileSave.write(str(dictCountCars))
+        writeDataInFile()
     if (choice == 3):
-        pass
+        readByFile()
     if (choice == 4):
-        pass
+        firstWrite()
+        writeDataInFile()
     if (choice == 5):
-        pass
+        updateAndDelteData()
     if (choice == 6):
-        pass
+        serchDataByKey()
     if (choice == 7):
-        pass
+        sortDataByKey()
     if (choice == 8):
         break
-
-    print(dictCountCars)
-
-fileSave.close()
