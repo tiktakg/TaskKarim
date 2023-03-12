@@ -1,7 +1,7 @@
 file = open('fileInput5.1.txt')
 str = file.read()
 
-if(len(str) > 45):
+if(len(str) > 20):
    print("В файле больше 45 символов ")
 
 str = str.replace('a','o')

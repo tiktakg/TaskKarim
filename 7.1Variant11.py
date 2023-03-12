@@ -7,8 +7,7 @@ n = int(input("Введите n размера матрицы :\n"))
 m = int(input("Введите m размера матрицы :\n"))
 
 
-matrix= np.array([[round(random.uniform(-6, 7), 3) for x in range(n)]
-          for y in range(m)])
+matrix= np.array([[round(random.uniform(-6, 7), 3) for x in range(n)]for y in range(m)])
 
 
 for i in range(n):
