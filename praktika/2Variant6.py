@@ -7,7 +7,7 @@ def numberPtotect(str):
         string = input(f"{str}\n")
         if (re.fullmatch('\s{0,}[-+]?\d{0,}[.]?\d{0,}', string)):
             break
-        return float(string)
+    return float(string)
     
 
 while 1:
